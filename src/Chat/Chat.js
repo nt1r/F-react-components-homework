@@ -50,11 +50,10 @@ class Chat extends Component {
 
     setTimeout(
       () => {
-        this.setState({
+        this.setState((prev) => ({
           shop: shopData,
-          // eslint-disable-next-line react/no-access-state-in-setstate
-          messages: this.state.messages.concat(updateMessage),
-        });
+          messages: prev.messages.concat(updateMessage),
+        }));
       },
       role === ROLE.ROBOT ? 1000 : 0
     );
