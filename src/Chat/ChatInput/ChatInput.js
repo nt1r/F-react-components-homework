@@ -3,10 +3,13 @@ import './ChatInput.scss';
 
 class ChatInput extends Component {
   render() {
+    const { text, onTextChange, onClickSendButton } = this.props;
     return (
       <footer className="ChatInput">
-        <input type="text" />
-        <button type="button">Send</button>
+        <input type="text" value={text} onChange={onTextChange} />
+        <button type="button" onClick={onClickSendButton}>
+          Send
+        </button>
       </footer>
     );
   }
